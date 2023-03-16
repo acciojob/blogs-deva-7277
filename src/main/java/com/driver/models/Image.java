@@ -1,6 +1,5 @@
 package com.driver.models;
 
-import com.driver.models.Blog;
 import lombok.*;
 
 import javax.persistence.*;
@@ -19,7 +18,7 @@ public class Image {
 
     private String description;
 
-    private String dimesnsions;
+    private String dimensions;
 
     @ManyToOne
     @JoinColumn
