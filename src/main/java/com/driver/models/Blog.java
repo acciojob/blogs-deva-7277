@@ -26,12 +26,9 @@ public class Blog {
     private Date pubDate;
 
     @ManyToOne
-    @JoinColumn(name = "image_id")
-    private Image image;
-
-    @ManyToOne
     @JoinColumn
     private User user;
+
 
     @OneToMany(mappedBy = "blog", cascade = CascadeType.ALL)
     List<Image> imageList = new ArrayList<>();
