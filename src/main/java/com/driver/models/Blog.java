@@ -26,6 +26,10 @@ public class Blog {
     private Date pubDate;
 
     @ManyToOne
+    @JoinColumn(name = "image_id")
+    private Image image;
+
+    @ManyToOne
     @JoinColumn
     private User user;
 
