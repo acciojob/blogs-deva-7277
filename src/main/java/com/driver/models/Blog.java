@@ -38,5 +38,9 @@ public class Blog {
     List<Image> imageList = new ArrayList<>();
 
 
-
+    public Blog(User user, String title, String content) {
+        this.user = user;
+        this.title  = title;
+        this.content = content;
+    }
 }

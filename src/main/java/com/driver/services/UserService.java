@@ -15,29 +15,21 @@ public class UserService {
     UserRepository userRepository3;
 
     public User createUser(String username, String password){
-        User user = new User();
-        user.setUsername(username);
-        user.setPassword(password);
-        user.setFirstName("test");
-        user.setLastName("test");
-
+        User user = new User(username, password);
         userRepository3.save(user);
         return user;
     }
 
     public void deleteUser(int userId){
-        Optional<User> user = userRepository3.findById(userId);
         userRepository3.deleteById(userId);
     }
 
     public User updateUser(Integer id, String password){
-        User user = null;
-        try {
-            user = userRepository3.findById(id).get();
-        }
-        catch (Exception e){
-            throw new RuntimeException(e);
-        }
+        User user;
+//        if(!userRepository3.findById(id).isPresent()) {
+//           throw new Exception();
+//        }
+        user = userRepository3.findById(id).get();
         user.setPassword(password);
         userRepository3.save(user);
         return user;
