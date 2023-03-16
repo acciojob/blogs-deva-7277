@@ -1,7 +1,6 @@
 package com.driver.models;
 
 import lombok.*;
-import org.apache.catalina.User;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -31,7 +30,7 @@ public class Blog {
     private User user;
 
     @OneToMany(mappedBy = "blog", cascade = CascadeType.ALL)
-    List<Image> image = new ArrayList<>();
+    List<Image> imageList = new ArrayList<>();
 
 
 
