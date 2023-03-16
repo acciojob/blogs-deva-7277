@@ -27,7 +27,7 @@ public class Blog {
 
     @ManyToOne
     @JoinColumn(name = "image_id")
-    private Image image;
+    private List<Image> image;
 
     @ManyToOne
     @JoinColumn
